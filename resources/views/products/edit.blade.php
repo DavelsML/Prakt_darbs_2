@@ -40,6 +40,14 @@
             <input type="text" name="description" placeholder="Description" value="{{$product->description}}" />
         </div>
         <div>
+            <label>Delivery company</label>
+            <select type="text "name="delivery" placeholder="Delivery" id="delivery" readonly>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div>
             <input type="submit" value="Update" />
         </div>
     </form>

@@ -12,6 +12,8 @@
                     {{ __("You're logged in!") }}
                     <br>
                     <a href="{{route('product.index')}}" class="text-blue-500 hover:text-blue-950">Product page</a>
+                    <br>
+                    <a href="{{route('delivery.index')}}" class="text-blue-500 hover:text-blue-950">Delivery page</a>
                 </div>
             </div>
         </div>

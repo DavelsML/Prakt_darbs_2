@@ -22,6 +22,7 @@ class ProductController extends Controller
             'qty' => 'required|numeric',
             'price' => 'required|decimal:0,2', // Change from decimal:2 to numeric
             'description' => 'nullable',
+            'delivery' => 'required|numeric',
         ]);
     
         $newProduct = Product::create($data); // Make sure this is executed correctly
@@ -39,6 +40,7 @@ class ProductController extends Controller
             'qty' => 'required|numeric',
             'price' => 'required|decimal:0,2', // Change from decimal:2 to numeric
             'description' => 'nullable',
+            'delivery' => 'required|numeric',
         ]);
 
         $product->update($data);

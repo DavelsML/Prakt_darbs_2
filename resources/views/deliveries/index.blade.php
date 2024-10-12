@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Product</h1>
+    <h1>Delivery</h1>
     <div>
         <div>
             @if(session()->has('success'))
@@ -16,32 +16,28 @@
             @endif
         </div>
         <div>
-            <a href="{{route('product.create')}}">Create a product</a>
+            <a href="{{route('delivery.create')}}">Create a delivery</a>
         </div>
         <table border="1">
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Qty</th>
-                <th>Price</th>
                 <th>Description</th>
-                <th>Delivery company</th>
+                <th>ID num</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            @foreach($products as $product )
+            @foreach($deliveries as $delivery )
                 <tr>
-                    <td>{{$product->id}}</td>
-                    <td>{{$product->name}}</td>
-                    <td>{{$product->qty}}</td>
-                    <td>{{$product->price}}</td>
-                    <td>{{$product->description}}</td>
-                    <td>{{$product->delivery}}</td>
+                    <td>{{$delivery->id}}</td>
+                    <td>{{$delivery->name}}</td>
+                    <td>{{$delivery->description}}</td>
+                    <td>{{$delivery->idnum}}</td>
                     <td>
-                        <a href="{{route('product.edit', ['product' => $product])}}">Edit</a>
+                        <a href="{{route('delivery.edit', ['delivery' => $delivery])}}">Edit</a>
                     </td>
                     <td>
-                        <form method="post" action="{{route('product.delete', ['product' => $product])}}">
+                        <form method="post" action="{{route('delivery.delete', ['delivery' => $delivery])}}">
                             @csrf
                             @method('delete')
                             <input type="submit" value="delete" />
