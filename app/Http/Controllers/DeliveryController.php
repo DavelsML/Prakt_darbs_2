@@ -18,9 +18,9 @@ class DeliveryController extends Controller
 
     public function store(Request $request){
         $data = $request->validate([
-            'name' => 'required',
-            'description' => 'nullable',
-            'idnum' => 'required|numeric',
+            'name' => 'required|max:100|unique:deliery,name',
+            'description' => 'nullable|max:200',
+            'idnum' => 'required|numeric|unique:delivery,idnum|integer',
         ]);
     
         $newDelivery = Delivery::create($data); // Make sure this is executed correctly
@@ -34,9 +34,9 @@ class DeliveryController extends Controller
 
     public function update(Delivery $delivery, Request $request){
         $data = $request->validate([
-            'name' => 'required',
-            'description' => 'nullable',
-            'idnum' => 'required|numeric',
+            'name' => 'required|max:100',
+            'description' => 'nullable|max:200',
+            'idnum' => 'required|numeric|integer',
         ]);
 
         $delivery->update($data);

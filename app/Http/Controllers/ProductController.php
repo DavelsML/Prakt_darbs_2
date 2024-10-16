@@ -18,14 +18,14 @@ class ProductController extends Controller
 
     public function store(Request $request){
         $data = $request->validate([
-            'name' => 'required',
-            'qty' => 'required|numeric',
-            'price' => 'required|decimal:0,2', // Change from decimal:2 to numeric
-            'description' => 'nullable',
+            'name' => 'required|max:50|unique:products,name',
+            'qty' => 'required|numeric|integer',
+            'price' => 'required|decimal:0,2|regex:/^\d+(\.\d{1,2})?$/', // Change from decimal:2 to numeric
+            'description' => 'nullable|max:200',
             'delivery' => 'required|numeric',
         ]);
     
-        $newProduct = Product::create($data); // Make sure this is executed correctly
+        $newProduct = Product::create($data);
     
         return redirect(route('product.index'));
     }
@@ -36,10 +36,10 @@ class ProductController extends Controller
 
     public function update(Product $product, Request $request){
         $data = $request->validate([
-            'name' => 'required',
-            'qty' => 'required|numeric',
-            'price' => 'required|decimal:0,2', // Change from decimal:2 to numeric
-            'description' => 'nullable',
+            'name' => 'required|max:50',
+            'qty' => 'required|numeric|integer',
+            'price' => 'required|decimal:0,2|regex:/^\d+(\.\d{1,2})?$/', // Change from decimal:2 to numeric
+            'description' => 'nullable|max:200',
             'delivery' => 'required|numeric',
         ]);
 
