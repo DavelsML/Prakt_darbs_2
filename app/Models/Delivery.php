@@ -12,6 +12,14 @@ class Delivery extends Model
     protected $fillable = [
         'name',
         'description',
-        'idnum'
+        'id_num'
     ];
+
+    /**
+     * Define the relationship: A delivery company has many products.
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

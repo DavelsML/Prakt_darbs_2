@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('qty');
-            $table->decimal('price');
+            $table->decimal('price');  // Added scale and precision for decimal
             $table->text('description');
-            $table->integer('delivery');
             $table->timestamps();
         });
+        
     }
 
     /**

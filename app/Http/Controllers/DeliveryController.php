@@ -8,7 +8,7 @@ use App\Models\Delivery;
 class DeliveryController extends Controller
 {
     public function index(){
-        $deliveries = Delivery::all();
+        $deliveries = Delivery::with('products')->get();
         return view('deliveries.index', ['deliveries' => $deliveries]);
     }
 
