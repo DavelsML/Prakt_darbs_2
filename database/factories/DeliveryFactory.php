@@ -3,32 +3,16 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
- */
 class DeliveryFactory extends Factory
 {
-    /**
-     * The current password being used by the factory.
-     */
+    protected $model = \App\Models\Delivery::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
+    public function definition()
     {
         return [
-            'name' => fake()->company(),
-            'description' => fake()->sentence(),
-            'idnum' => fake()->numberBetween(1, 100),
+            'name' => $this->faker->company,
+            'description' => $this->faker->sentence,
         ];
     }
-
-    /**
-     * Indicate that the model's email address should be unverified.
-     */
 }

@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse; /* Ensures there are no double borders */
+    }
+    th, td {
+        padding: 10px; /* Adds some space inside table cells */
+        text-align: left; /* Aligns text to the left */
+    }
+    </style>
 </head>
 <body>
     <h1>Delivery</h1>
@@ -23,7 +33,6 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th>ID num</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -32,7 +41,6 @@
                     <td>{{$delivery->id}}</td>
                     <td>{{$delivery->name}}</td>
                     <td>{{$delivery->description}}</td>
-                    <td>{{$delivery->idnum}}</td>
                     <td>
                         <a href="{{route('delivery.edit', ['delivery' => $delivery])}}">Edit</a>
                     </td>

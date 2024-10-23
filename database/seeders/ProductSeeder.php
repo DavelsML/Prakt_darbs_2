@@ -2,31 +2,25 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Product;
+use App\Models\Delivery;
 use Illuminate\Support\Facades\DB;
 
 class ProductSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
+    public function run()
     {
-        // User::factory(10)->create();
         DB::table('products')->truncate();
+        // Get all the deliveries
+        $deliveries = Delivery::all();
 
-        Product::factory()->create([
-            'name' => 'Test Product',
-            'qty' => 4,
-            'price' => 70.42,
-            'description' => 'This is a description.',
-            'delivery' => 3,
-
-        ]);
-
-        Product::factory()->count(49)->create();
+        // Loop through deliveries and create products for each one
+        foreach ($deliveries as $delivery) {
+            Product::factory()->count(3)->create([
+                'delivery_id' => $delivery->id,  // Assign each product to a delivery
+            ]);
+        }
     }
-
 }
+

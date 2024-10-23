@@ -9,17 +9,11 @@ class Delivery extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'description',
-        'id_num'
-    ];
+    protected $fillable = ['name', 'description'];
 
-    /**
-     * Define the relationship: A delivery company has many products.
-     */
     public function products()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class, 'delivery_id');
     }
 }
+

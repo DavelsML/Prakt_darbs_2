@@ -15,12 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('qty');
-            $table->decimal('price',8,2);  // Added scale and precision for decimal
+            $table->decimal('price', 8, 2);  // Scale and precision for price
             $table->text('description');
-            $table->foreignId('idnum')->constrained('deliveries')->onDelete('cascade');
+            $table->foreignId('delivery_id')->constrained('deliveries')->onDelete('cascade');  // Foreign key linking to deliveries
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -31,3 +30,4 @@ return new class extends Migration
         Schema::dropIfExists('products');
     }
 };
+

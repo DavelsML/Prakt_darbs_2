@@ -9,9 +9,11 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
-    public function run(): void
-    {
-        $this->call(ProductSeeder::class);
-        $this->call(DeliverySeeder::class);
-    }
+    public function run()
+{
+    $this->call([
+        DeliverySeeder::class,
+        ProductSeeder::class,
+    ]);
+}
 }
