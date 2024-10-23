@@ -14,6 +14,14 @@ class Product extends Model
         'qty',
         'price',
         'description',
-        'delivery'
+        'delivery_id'  // Add delivery_id to fillable fields
     ];
+
+    /**
+     * Define the relationship: A product belongs to one delivery company.
+     */
+    public function delivery()
+    {
+        return $this->belongsTo(Delivery::class);
+    }
 }
