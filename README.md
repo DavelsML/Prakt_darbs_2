@@ -3,24 +3,52 @@
 1. Prerequisites
 
 -  Ensure you have PHP, Composer, Node.js, and npm installed on your machine.
+    - Check Installation.
+    ```bash
+    php -v
+    ```
+    ```bash
+    composer -v
+    ```
+    ```bash
+    node -v
+    ```
+    - Install [Node.js](https://nodejs.org/en) and [Composer](https://getcomposer.org), if not installed.
+    - If you are using a windows machine install [XAMPP](https://www.apachefriends.org) for mysql and apache.
 -  Clone the repository to your local machine.
-
-2. Installation
-
+    ``` bash
+    git clone https://github.com/DavelsML/Prakt_darbs_2.git
+    ```
+    - Using XAMPP, clone it into /xampp/htdocs/ via terminal window
+2. Installation and running the website
+- Open the Laravel project
+- Make sure you install Composer and Npm locally for Laravel in a terminal window.
+    ``` bash
+    composer install
+    ```
+    ``` bash
+    npm install
+    ```
 - Open 3 terminal windows connected to this project.
 - Navigate to your project directory in each terminal.
 - Run the following commands in the respective terminals:
    -  Terminal 1: Start the Laravel development server:
-php artisan serve
+    ```bash 
+    php artisan serve
+    ```
 
    -  Terminal 2: Compile your assets using npm:
-npm run dev
-
-   -  Terminal 3: Seed the database with sample data:
-php artisan db:seed
+    ```bash
+    npm run dev
+    ```
+   -  Terminal 3: Migrate the database and seed it database with sample data:
+    ```bash
+    php artisan migrate
+    php artisan db:seed
+    ```
 
 3. Accessing the Application
-Connect to the server shown when running php artisan serve (usually at http://127.0.0.1:8000).
+- Connect to the server shown when running php artisan serve (usually at http://127.0.0.1:8000).
 
 4. User Instructions
 - Login or Register: Create a new account or log in with existing credentials.
