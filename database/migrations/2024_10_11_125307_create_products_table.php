@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('qty');
-            $table->decimal('price');
+            $table->decimal('price',8,2);  // Added scale and precision for decimal
             $table->text('description');
+            $table->foreignId('idnum')->constrained('deliveries')->onDelete('cascade');
             $table->timestamps();
         });
+        
     }
 
     /**

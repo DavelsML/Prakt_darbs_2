@@ -46,6 +46,8 @@
                 </tr>
             @endforeach
         </table>
+        <br>
+        <a href="{{route('dashboard')}}" class="text-blue-500 hover:text-blue-950">Back to dashboard</a>
     </div>
 </body>
 </html>
