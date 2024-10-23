@@ -10,13 +10,13 @@
 - Open 3 terminal windows connected to this project.
 - Navigate to your project directory in each terminal.
 - Run the following commands in the respective terminals:
-      -  Terminal 1: Start the Laravel development server:
+   -  Terminal 1: Start the Laravel development server:
 php artisan serve
 
-      -  Terminal 2: Compile your assets using npm:
+   -  Terminal 2: Compile your assets using npm:
 npm run dev
 
-      -  Terminal 3: Seed the database with sample data:
+   -  Terminal 3: Seed the database with sample data:
 php artisan db:seed
 
 3. Accessing the Application
