@@ -3,109 +3,52 @@
 1. Prerequisites
 
 -  Ensure you have PHP, Composer, Node.js, and npm installed on your machine.
-      - composer install
-      - npm install
+    - Check Installation.
+    ```bash
+    php -v
+    ```
+    ```bash
+    composer -v
+    ```
+    ```bash
+    node -v
+    ```
+    - Install [Node.js](https://nodejs.org/en) and [Composer](https://getcomposer.org), if not installed.
+    - If you are using a windows machine install [XAMPP](https://www.apachefriends.org) for mysql and apache.
 -  Clone the repository to your local machine.
-      - git clone https://github.com/DavelsML/Prakt_darbs_2.git
--  Check if the .env file exists, if not, create it, copy and paste everything into
-      - APP_NAME=Laravel
-APP_ENV=local
-APP_KEY=base64:YNNNFqLwDtDKADsEM93LdS3TemaRGl0duXSRePdTQSs=
-APP_DEBUG=true
-APP_TIMEZONE=UTC
-APP_URL=http://localhost
-
-APP_LOCALE=en
-APP_FALLBACK_LOCALE=en
-APP_FAKER_LOCALE=en_US
-
-APP_MAINTENANCE_DRIVER=file
-# APP_MAINTENANCE_STORE=database
-
-BCRYPT_ROUNDS=12
-
-LOG_CHANNEL=stack
-LOG_STACK=single
-LOG_DEPRECATIONS_CHANNEL=null
-LOG_LEVEL=debug
-
-
-#DB_CONNECTION=sqlite
-#DB_HOST=127.0.0.1
-#DB_PORT=3306
-#DB_DATABASE=db1_prakt_darbs_2
-#DB_USERNAME=root
-#DB_PASSWORD=
-
-# first Database Configuration
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=db1_prakt_darbs_2
-DB_USERNAME=root
-DB_PASSWORD=
-
-# Second Database Configuration
-#DB_CONNECTION_SECOND=mysql_second
-#DB_HOST_SECOND=127.0.0.1
-#DB_PORT_SECOND=3306
-#DB_DATABASE_SECOND=db2_prakt_darbs_2  # Second database
-#DB_USERNAME_SECOND=root
-#DB_PASSWORD_SECOND=
-
-SESSION_DRIVER=database
-SESSION_LIFETIME=120
-SESSION_ENCRYPT=false
-SESSION_PATH=/
-SESSION_DOMAIN=null
-
-BROADCAST_CONNECTION=log
-FILESYSTEM_DISK=local
-QUEUE_CONNECTION=database
-
-CACHE_STORE=database
-CACHE_PREFIX=
-
-MEMCACHED_HOST=127.0.0.1
-
-REDIS_CLIENT=phpredis
-REDIS_HOST=127.0.0.1
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-
-MAIL_MAILER=log
-MAIL_HOST=127.0.0.1
-MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS="hello@example.com"
-MAIL_FROM_NAME="${APP_NAME}"
-
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_DEFAULT_REGION=us-east-1
-AWS_BUCKET=
-AWS_USE_PATH_STYLE_ENDPOINT=false
-
-VITE_APP_NAME="${APP_NAME}"
-
-2. Installation
-
+    ``` bash
+    git clone https://github.com/DavelsML/Prakt_darbs_2.git
+    ```
+    - Using XAMPP, clone it into /xampp/htdocs/ via terminal window
+2. Installation and running the website
+- Open the Laravel project
+- Make sure you install Composer and Npm locally for Laravel in a terminal window.
+    ``` bash
+    composer install
+    ```
+    ``` bash
+    npm install
+    ```
 - Open 3 terminal windows connected to this project.
 - Navigate to your project directory in each terminal.
 - Run the following commands in the respective terminals:
    -  Terminal 1: Start the Laravel development server:
-php artisan serve
+    ```bash 
+    php artisan serve
+    ```
 
    -  Terminal 2: Compile your assets using npm:
-npm run dev
-
-   -  Terminal 3: Seed the database with sample data:
-php artisan db:seed
+    ```bash
+    npm run dev
+    ```
+   -  Terminal 3: Migrate the database and seed it database with sample data:
+    ```bash
+    php artisan migrate
+    php artisan db:seed
+    ```
 
 3. Accessing the Application
-Connect to the server shown when running php artisan serve (usually at http://127.0.0.1:8000).
+- Connect to the server shown when running php artisan serve (usually at http://127.0.0.1:8000).
 
 4. User Instructions
 - Login or Register: Create a new account or log in with existing credentials.
