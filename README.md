@@ -7,25 +7,25 @@
 
 2. Installation
 
-2.1. Open 3 terminal windows connected to this project.
-2.2. Navigate to your project directory in each terminal.
-2.3. Run the following commands in the respective terminals:
-   -  Terminal 1: Start the Laravel development server:
+- Open 3 terminal windows connected to this project.
+- Navigate to your project directory in each terminal.
+- Run the following commands in the respective terminals:
+      -  Terminal 1: Start the Laravel development server:
 php artisan serve
 
-   -  Terminal 2: Compile your assets using npm:
+      -  Terminal 2: Compile your assets using npm:
 npm run dev
 
-   -  Terminal 3: Seed the database with sample data:
+      -  Terminal 3: Seed the database with sample data:
 php artisan db:seed
 
 3. Accessing the Application
 Connect to the server shown when running php artisan serve (usually at http://127.0.0.1:8000).
 
 4. User Instructions
-4.1. Login or Register: Create a new account or log in with existing credentials.
-4.2. Choose Database: Select either the product database or the delivery database.
-4.3. Manage Records:
+- Login or Register: Create a new account or log in with existing credentials.
+- Choose Database: Select either the product database or the delivery database.
+- Manage Records:
    -  Create a new record.
    -  Edit an existing record.
    -  Delete a record.
