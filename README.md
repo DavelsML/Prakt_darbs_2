@@ -1,72 +1,96 @@
-## HOW TO USE
+# Laravel Breeze Project (2. praktiskais darbs)
 
-1. Prerequisites
+This is a Laravel Breeze project. Follow the steps below to get it up and running on your local machine using XAMPP.
 
--  Ensure you have PHP, Composer, Node.js, and npm installed on your machine.
-    - Check Installation.
-    ```bash
-    php -v
-    ```
-    ```bash
-    composer -v
-    ```
-    ```bash
-    node -v
-    ```
-    - Install [Node.js](https://nodejs.org/en) and [Composer](https://getcomposer.org), if not installed.
-    - If you are using a windows machine install [XAMPP](https://www.apachefriends.org) for mysql and apache.
--  Clone the repository to your local machine.
-    ``` bash
-    git clone https://github.com/DavelsML/Prakt_darbs_2.git
-    ```
-    - Using XAMPP, clone it into /xampp/htdocs/ via terminal window
-2. Installation and running the website
-- Open the Laravel project
-- Make sure you install Composer and Npm locally for Laravel in a terminal window.
-    ``` bash
-    composer install
-    ```
-    ``` bash
-    npm install
-    ```
-- Open 3 terminal windows connected to this project.
-- Navigate to your project directory in each terminal.
-- Run the following commands in the respective terminals:
-   -  Terminal 1: Start the Laravel development server:
-    ```bash 
-    php artisan serve
-    ```
+## Requirements
 
-   -  Terminal 2: Compile your assets using npm:
-    ```bash
-    npm run dev
-    ```
-   -  Terminal 3: Migrate the database and seed it database with sample data:
-    ```bash
-    php artisan migrate
-    php artisan db:seed
-    ```
+- PHP >= 8.0
+- [Composer](https://getcomposer.org/)
+- [XAMPP](https://www.apachefriends.org/index.html) (For local development)
+- [Node.js & npm](https://nodejs.org/) (For frontend assets)
 
-3. Accessing the Application
-- Connect to the server shown when running php artisan serve (usually at http://127.0.0.1:8000).
+## Installation
 
-4. User Instructions
-- Login or Register: Create a new account or log in with existing credentials.
-- Choose Database: Select either the product database or the delivery database.
-- Manage Records:
-   -  Create a new record.
-   -  Edit an existing record.
-   -  Delete a record.
+### 1. Clone the Repository
+First, navigate to your XAMPP `htdocs` folder and clone this repository:
+```bash
+cd C:/xampp/htdocs
+git clone https://github.com/DavelsML/Prakt_darbs_2
+cd Prakt_darbs_2
+```
 
-## Code of Conduct
+### 2. Install PHP Dependencies
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Run the following command to install the necessary PHP dependencies:
+```bash
+composer install
+```
 
-## Security Vulnerabilities
+### 3. Set Up Environment Variables
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Since ```.env``` has not been added to ```.gitignore``` due to simplicity (very professional, we know), the main focus should be on this part:
+```bash
+# first Database Configuration
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db1_prakt_darbs_2
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+When creating the database at phpMyAdmin, the database name should be the same as here (db1_prakt_darbs_2).
+
+### 4. Generate Application Key
+
+Run the following command to generate a new application key:
+
+```bash
+php artisan key:generate
+```
+
+### 5. Set Up the database
+
+Create a new database using phpMyAdmin, and then run migrations to set up the tables:
+```bash
+php artisan migrate
+```
+
+### 6. Install Frontend Dependencies
+
+Since we are using Laravel Breeze with a frontend framework, you will need to install the JavaScript dependencies:
+
+```bash
+npm install
+```
+
+Then, compile the assets:
+
+```bash
+npm run dev
+```
+
+### 7. Populate the Database with Seeder (Optional)
+
+Since the project has a built-in seeder, you can run it using:
+
+```bash
+php artisan db:seed
+```
+
+### 8. Serve the Application
+
+Finally, run the following command to start the Laravel development server:
+
+```bash
+php artisan serve
+```
+
+You can now access the project at ```http://localhost:8000```.
 
 ## License
+
+This project is open-source and licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
